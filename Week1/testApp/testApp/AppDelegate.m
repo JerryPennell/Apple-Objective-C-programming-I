@@ -4,7 +4,31 @@
 //
 //  Created by Wayne Pennell on 1/8/13.
 //  Copyright (c) 2013 Wayne Pennell. All rights reserved.
-//
+//  Apple Programming Language: Objective CI - APP1  Week 1
+
+
+//Instructions
+
+/*
+ You project will need to have the following features:
+ Create a new Empty Application Project
+ 
+ Create a variable using the float data type. Cast the float to an int and using NSLog, output both the initial float value as well as the int value.
+ 
+ Perform an AND, OR comparison. Use float, int and BOOL types. BOOL values should be YES or NO and written in all caps.
+ 
+ Use an if, else if and else check using any of the data types of your choice.
+ 
+ Perform a single for loop printing out values to the console
+ 
+ Perform a nested loop printing out values to the console
+ 
+ Perform a while loop that increments an int variable and outputs to the console.
+ 
+ You are free to come up with any story you wish, but keep a constant theme in your application. Also, all of the code for this assignment will need to be placed in the
+ didFinishLaunchingWithOptions function. Don't worry if the amount of code gets long, just keep things neat and please use code comments.
+ 
+ */
 
 #import "AppDelegate.h"
 
@@ -108,7 +132,7 @@
     
     
     
-    
+    // End of Story
     
     
     
