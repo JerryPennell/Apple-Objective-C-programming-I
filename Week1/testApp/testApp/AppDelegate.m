@@ -51,11 +51,11 @@
     
     //Perform an AND, OR comparison. Use float, int and BOOL types. BOOL values should be YES or NO and written in all caps.
     
-    if(milkOnSale == YES) && (syrupOnSale == YES){
+    if((milkOnSale) && (syrupOnSale)){
         
         NSLog(@"You betcha I am making pancakes, both the milk and syrup were on SALE!");
         
-    }else if( costOfMilk <= 5 ) || (costOfSyrup <= 7){
+    }else if(( costOfMilk <= 5 ) || (costOfSyrup <= 7)){
         
         NSLog(@"Well I guess I can buy one of the ingredients and just borrow the rest from my neighbor.");
     }else {
@@ -63,7 +63,14 @@
         NSLog(@"Neither the milk nor the syrup were on sale, I will not have pancakes");
     }
     
+    //Takes 5 or more pankcakes to make a super stack - Single for loop
     
+    NSLog(@"Lets make a super stack of pancakes.. it takes 10!  Let's begin..   READY!!!");
+    for (int amt = 1; amt <= 10; amt++)
+    {
+        NSLog(@"Adding pankcake number #%d", amt);
+    }
+    NSLog(@"That's our SUPER stack!");
     
     
     
