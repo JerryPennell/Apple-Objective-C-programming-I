@@ -66,12 +66,45 @@
     //Takes 5 or more pankcakes to make a super stack - Single for loop
     
     NSLog(@"Lets make a super stack of pancakes.. it takes 10!  Let's begin..   READY!!!");
+    
+    //Single for loop
     for (int amt = 1; amt <= 10; amt++)
     {
         NSLog(@"Adding pankcake number #%d", amt);
     }
+    
     NSLog(@"That's our SUPER stack!");
     
+    //Nested for loop
+    
+    int howManyCanIeat = 5;
+    
+    
+    for (int consume = 9; consume != 0; consume--)
+    {
+        NSLog(@"Let's eat a pankcake noom noom noom, there are %d more left!", consume);
+        
+        if(howManyCanIeat >= consume){
+            NSLog(@"I can only eat %d I am stuffed!", howManyCanIeat);
+            break;
+        }
+    }
+    
+    //While loop
+    int baconStrips =0;
+    
+    
+    NSLog(@"Since we have more guests coming for breakfast we should cook more for them 20 should be enough.");
+    
+    while (baconStrips < 20){
+        NSLog(@"Let's fry one UP!");
+        
+        baconStrips++;
+
+        NSLog(@"That's only %d, we need more.",baconStrips);
+    }
+    
+    NSLog(@"Perfect ... let's all have a delcious breakfast!");
     
     
     
