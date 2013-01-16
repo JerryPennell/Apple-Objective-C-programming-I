@@ -130,15 +130,23 @@
     
     NSMutableString *strList = [NSMutableString string]; //String to hold items
    
+    
+    //Looking into NSArray
     for(NSString *item in itemsInBook) {
+
+    //Gets the index of item as its looped through
+        
          NSUInteger index = [itemsInBook indexOfObject:item];
+        
+        //Specifically if the index is 4 we set And otherwise we add a comma
+        
         if (index == 4) { 
-            [strList appendString:@" and "];
+            [strList appendString:@" and "];  //appends and
             [strList appendString:item];
         }else{
             [strList appendString:item];
             if (item != nil){
-                [strList appendString:@","];
+                [strList appendString:@","];  //appends comma
             }
         }
             //NSLog(@"%d",index);
