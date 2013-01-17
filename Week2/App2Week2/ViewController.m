@@ -158,12 +158,12 @@
         //Specifically if the index is 4 we set And otherwise we add a comma
         
         if (index == 4) { 
-            [strList appendString:@" and "];  //appends and
+            [strList appendString:@"and "];  //appends and
             [strList appendString:item];
         }else{
             [strList appendString:item];
             if (item != nil){
-                [strList appendString:@","];  //appends comma
+                [strList appendString:@", "];  //appends comma
             }
         }
             //NSLog(@"%d",index);
