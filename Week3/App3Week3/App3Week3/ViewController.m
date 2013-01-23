@@ -41,6 +41,29 @@
     return (value1 + value2);
 }
 
+// Compare two NSInteger functions - Returns YES or NO
+
+- (BOOL)compare:(NSInteger)compVal1 :(NSInteger)compVal2
+{
+    if ((int)compVal1 == (int)compVal1) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+// Append to NSStrings into NSMutableString - Returns arg1 and arg2 appended
+
+- (NSString*)append:(NSString*)stringVal1 :(NSString*)stringVal2
+{
+   NSMutableString *strValues = [NSMutableString string];
+    
+   [strValues appendString:stringVal1];
+   [strValues appendString:stringVal2];
+  
+    return strValues;
+}
+
 
 - (void)didReceiveMemoryWarning
 {

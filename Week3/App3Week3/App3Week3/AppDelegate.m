@@ -21,6 +21,20 @@
     //Function call to Addition
     int addedNumber = [self.viewController add:1 :55];
     
+    //Function call to show BOOL 
+    BOOL comparedIntegers = [self.viewController compare:34 :34];
+    
+    //Function call to show appended string
+    NSString *appendedStrings = [self.viewController append:@"String 1 and " :@"String 2 appended"];
+    
+    UIAlertView *displayAlertWithString = [[UIAlertView alloc]
+                          initWithTitle: @"displayAlertWithString"
+                          message: appendedStrings
+                          delegate: nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil];
+    [displayAlertWithString show];
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
