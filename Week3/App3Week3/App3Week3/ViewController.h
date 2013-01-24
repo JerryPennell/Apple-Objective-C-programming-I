@@ -28,4 +28,9 @@
 
 //Append two NSStrings with NSMutable String
 - (NSString*)append:(NSString*)stringVal1 :(NSString*)stringVal2;
+
+//Display Alert with String - takes in a NSString as input
+- (NSString*)displayAlertWithString:(NSString*)stringInput;
+
+
 @end

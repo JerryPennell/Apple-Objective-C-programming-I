@@ -64,6 +64,12 @@
     return strValues;
 }
 
+// DisplayAlertWithString function takes input as NSString
+
+- (NSString*)displayAlertWithString:(NSString*)stringInput
+{
+    return stringInput;
+}
 
 - (void)didReceiveMemoryWarning
 {

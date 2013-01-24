@@ -19,21 +19,52 @@
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
     
     //Function call to Addition
+    //Call the Add function passing in two integer values. Capture the return of this
+    //function into variable.
     int addedNumber = [self.viewController add:1 :55];
     
-    //Function call to show BOOL 
+    //Bundle the returned integer into an NSNumber
+    //then convert it to a NSString and pass it to the DisplayAlertWithString function.
+    
+    NSString *numToString = [NSString stringWithFormat: @"The number is %@", [self.viewController displayAlertWithString:(NSString*)[NSNumber numberWithInt:addedNumber]]];
+    
+     
+    
+    //Function call to show BOOL
+    
     BOOL comparedIntegers = [self.viewController compare:34 :34];
     
     //Function call to show appended string
+    
     NSString *appendedStrings = [self.viewController append:@"String 1 and " :@"String 2 appended"];
     
-    UIAlertView *displayAlertWithString = [[UIAlertView alloc]
-                          initWithTitle: @"displayAlertWithString"
+    //Alert window with appended string
+    
+    UIAlertView *alertAppendString = [[UIAlertView alloc]
+                          initWithTitle: @"Appended String"
                           message: appendedStrings
-                          delegate: nil
+                          delegate: self
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
-    [displayAlertWithString show];
+    
+    //Display and release alert
+    
+    [alertAppendString show];
+   
+    
+    
+    //Alert window with DisplayAlertWith string
+    
+    UIAlertView *alertWithString = [[UIAlertView alloc]
+                                 initWithTitle: @"DisplayAlertWithString"
+                                 message: numToString
+                                 delegate: self
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+    //Display and release alert
+    
+    [alertWithString show];
+    
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
