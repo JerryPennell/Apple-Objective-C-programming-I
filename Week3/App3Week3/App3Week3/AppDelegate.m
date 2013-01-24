@@ -21,7 +21,11 @@
     //Function call to Addition
     //Call the Add function passing in two integer values. Capture the return of this
     //function into variable.
-    int addedNumber = [self.viewController add:1 :55];
+    
+    int value1 = 22;
+    int value2 = 22;
+    
+    int addedNumber = [self.viewController add:value1 :value2];
     
     //Bundle the returned integer into an NSNumber
     //then convert it to a NSString and pass it to the DisplayAlertWithString function.
@@ -32,9 +36,10 @@
     
     //Function call to show BOOL
     
-    BOOL comparedIntegers = [self.viewController compare:34 :34];
+    BOOL comparedIntegers = [self.viewController compare:value1 :value2];
+
     
-    //Function call to show appended string
+    //Function call to display ppended string
     
     NSString *appendedStrings = [self.viewController append:@"String 1 and " :@"String 2 appended"];
     
@@ -43,7 +48,7 @@
     UIAlertView *alertAppendString = [[UIAlertView alloc]
                           initWithTitle: @"Appended String"
                           message: appendedStrings
-                          delegate: self
+                          delegate: nil
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil];
     
@@ -55,16 +60,34 @@
     
     //Alert window with DisplayAlertWith string
     
-    UIAlertView *alertWithString = [[UIAlertView alloc]
+    UIAlertView *callWithString = [[UIAlertView alloc]
                                  initWithTitle: @"DisplayAlertWithString"
                                  message: numToString
-                                 delegate: self
+                                 delegate: nil
                                  cancelButtonTitle:@"OK"
                                  otherButtonTitles:nil];
     //Display and release alert
     
-    [alertWithString show];
+    [callWithString show];
     
+    
+    //Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using the DisplayAlertWithString function
+    
+    if(comparedIntegers == YES){
+        
+        NSString *valuesAndString = [NSString stringWithFormat: @"%d %d %@", value1, value2,[self.viewController displayAlertWithString:(NSString*)[NSNumber numberWithInt:addedNumber]]];
+        
+        //Alert window input values and result string
+        
+        UIAlertView *alertWithString = [[UIAlertView alloc]
+                                        initWithTitle: @"Was YES"
+                                        message: valuesAndString
+                                        delegate: self
+                                        cancelButtonTitle:@"OK"
+                                        otherButtonTitles:nil];
+        
+        [alertWithString show];
+    }
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
