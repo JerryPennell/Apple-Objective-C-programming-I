@@ -17,78 +17,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    
-    //Function call to Addition
-    //Call the Add function passing in two integer values. Capture the return of this
-    //function into variable.
-    
-    int value1 = 22;
-    int value2 = 22;
-    
-    int addedNumber = [self.viewController add:value1 :value2];
-    
-    //Bundle the returned integer into an NSNumber
-    //then convert it to a NSString and pass it to the DisplayAlertWithString function.
-    
-    NSString *numToString = [NSString stringWithFormat: @"The number is %@", [self.viewController displayAlertWithString:(NSString*)[NSNumber numberWithInt:addedNumber]]];
-    
-     
-    
-    //Function call to show BOOL
-    
-    BOOL comparedIntegers = [self.viewController compare:value1 :value2];
-
-    
-    //Function call to display ppended string
-    
-    NSString *appendedStrings = [self.viewController append:@"String 1 and " :@"String 2 appended"];
-    
-    //Alert window with appended string
-    
-    UIAlertView *alertAppendString = [[UIAlertView alloc]
-                          initWithTitle: @"Appended String"
-                          message: appendedStrings
-                          delegate: nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil];
-    
-    //Display and release alert
-    
-    [alertAppendString show];
-   
-    
-    
-    //Alert window with DisplayAlertWith string
-    
-    UIAlertView *callWithString = [[UIAlertView alloc]
-                                 initWithTitle: @"DisplayAlertWithString"
-                                 message: numToString
-                                 delegate: nil
-                                 cancelButtonTitle:@"OK"
-                                 otherButtonTitles:nil];
-    //Display and release alert
-    
-    [callWithString show];
-    
-    
-    //Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using the DisplayAlertWithString function
-    
-    if(comparedIntegers == YES){
         
-        NSString *valuesAndString = [NSString stringWithFormat: @"%d %d %@", value1, value2,[self.viewController displayAlertWithString:(NSString*)[NSNumber numberWithInt:addedNumber]]];
-        
-        //Alert window input values and result string
-        
-        UIAlertView *alertWithString = [[UIAlertView alloc]
-                                        initWithTitle: @"Was YES"
-                                        message: valuesAndString
-                                        delegate: self
-                                        cancelButtonTitle:@"OK"
-                                        otherButtonTitles:nil];
-        
-        [alertWithString show];
-    }
-    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

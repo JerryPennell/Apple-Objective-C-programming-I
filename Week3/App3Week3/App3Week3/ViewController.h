@@ -20,13 +20,13 @@
 
 
 //Add Function definition
-- (int)add:(int)value1 :(int)value2;
+- (int)add:(int)addVal1 addVal2:(int)addVal2;
 
 //BOOL compare two NSInteger values and return YES or NO
-- (BOOL)compare:(NSInteger)compVal1 :(NSInteger)compVal2;
+- (BOOL)compare:(NSInteger)addVal1 addVal2:(NSInteger)addVal2;
 
 //Append two NSStrings with NSMutable String
-- (NSString*)append:(NSString*)stringVal1 :(NSString*)stringVal2;
+- (NSString*)append:(NSString*)stringVal1 stringVal2:(NSString*)stringVal2;
 
 //Display Alert with String - takes in a NSString as input
 - (NSString*)displayAlertWithString:(NSString*)stringInput;
