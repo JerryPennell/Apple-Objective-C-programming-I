@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+
+//Defined global static variables
+
 #define LOGIN_BTN 0
 #define DATE_BTN 1
 #define INFO_BTN 2
@@ -110,6 +113,7 @@
     else if (button.tag == DATE_BTN)  //Checking for date button tag
         
     {
+        //If we have a date button then we format and display when ready
         NSDate *date = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateStyle:NSDateFormatterFullStyle];
