@@ -95,48 +95,53 @@
 //Create click function for each button when they are pressed
 - (void)onClick:(UIButton*)button
 {
-    if (button.tag == LOGIN_BTN)
-    {
-        NSString *typedUsername = [textField text];
-        
-        //Here we hide the Keyboard because its just good UI
-        [textField endEditing:YES];
-        if (typedUsername.length == 0)
-        {
-            enterYourUsername.text = @"Username cannot be empty.";  //Display if the length is zero
-        }
-        else if (enterYourUsername != nil)
-        {
-            enterYourUsername.text = [NSString stringWithFormat:@"User: %@ has been logged in.",typedUsername];
-        }
-    }
-    else if (button.tag == DATE_BTN)  //Checking for date button tag
-        
-    {
-        //If we have a date button then we format and display when ready
-        NSDate *date = [NSDate date];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterFullStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Date" message:[NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        if (alertView != nil)
-        {
-            [alertView show];
-        }
-        
-    } else if (button.tag == INFO_BTN)
-        
-    {
-        if (createdBy != nil)
-        {
-          createdBy.text = @"This application was created by: Jerry Pennell.";
+    //Switch statement is much cleaner for checking globals
+    switch (button.tag){
+         case LOGIN_BTN:
+         {
+            NSString *typedUsername = [textField text];
             
+            //Here we hide the Keyboard because its just good UI
+            [textField endEditing:YES];
+            if (typedUsername.length == 0)
+            {
+                enterYourUsername.text = @"Username cannot be empty.";  //Display if the length is zero
+            }
+            else if (enterYourUsername != nil)
+            {
+                enterYourUsername.text = [NSString stringWithFormat:@"User: %@ has been logged in.",typedUsername];
+            }
+         }
+        break;
+            
+        case DATE_BTN:  //Checking for date button tag
+        {
+            //If we have a date button then we format and display when ready
+            NSDate *date = [NSDate date];
+            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+            [dateFormatter setDateStyle:NSDateFormatterFullStyle];
+            [dateFormatter setTimeStyle:NSDateFormatterFullStyle];
+            
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Date" message:[NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:date]] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            if (alertView != nil)
+            {
+                [alertView show];
+            }
+        }
+        break;
+            
+        case INFO_BTN:
+        {
+            if (createdBy != nil)
+            {
+              createdBy.text = @"This application was created by: Jerry Pennell.";
+                
+            }
+            break;
         }
     }
 }
-
 
 - (void)didReceiveMemoryWarning
 {
