@@ -96,6 +96,8 @@
     {
         NSString *typedUsername = [textField text];
         
+        //Here we hide the Keyboard because its just good UI
+        [textField endEditing:YES];
         if (typedUsername.length == 0)
         {
             enterYourUsername.text = @"Username cannot be empty.";  //Display if the length is zero
@@ -130,6 +132,7 @@
         }
     }
 }
+
 
 - (void)didReceiveMemoryWarning
 {
